@@ -1,0 +1,348 @@
+
+           ****************************************** Introduction To DBMS ************************************************
+
+
+
+1. Create table name :student and exam
+===================================================================
+
+CREATE:
+**************************
+CREATE TABLE student(rollno int(10)PRIMARY KEY,name varchar(300),branch varchar(300));
+
+INSERT table student:
+***********************
+
+a) INSERT into student(rollno,name,branch)VALUES(1,'jay','computer science');
+
+b) INSERT into student(rollno,name,branch)VALUES(2,'suhani','Electronic and com');
+
+c) INSERT into student(rollno,name,branch)VALUES(3,'kriti','Electronic and com');
+
+
+create table exam using FOREIGN KEY:
+=======================================
+CREATE TABLE Exam(rollno int(10),s_code varchar(300),marks int(10),p_code varchar(200),FOREIGN KEY (rollno) 
+student(rollno));
+
+INSERT table Exam:
+**********************
+
+INSERT INTO exam(rollno,s_code,marks,p_code)VALUES(1,'CS11',50,'cs');
+
+INSERT INTO exam(rollno,s_code,marks,p_code)VALUES(1,'CS12',60,'cs');
+
+INSERT INTO exam(rollno,s_code,marks,p_code)VALUES(2,'EC101',66,'EC');
+
+INSERT INTO exam(rollno,s_code,marks,p_code)VALUES(2,'EC102',70,'EC');
+
+INSERT INTO exam(rollno,s_code,marks,p_code)VALUES(3,'EC101',45,'EC');
+
+INSERT INTO exam(rollno,s_code,marks,p_code)VALUES(3,'EC102',50,'EC');
+
+
+
+
+2. Create Table Name : Student and Exam
+=======================================
+->Create Table Below :
+
+
+CREATE TABLE Below(FirstName varchar(200),LastName varchar(300),Address varchar(300),
+City varchar(200),Age int(10));
+
+->Insert Table Below :
+
+
+INSERT into below (FirstName,LastName,Address,City,Age)VALUES
+('Mickey','Mouse','123Fantasy Way','Anaheim',73);
+
+INSERT into below (FirstName,LastName,Address,City,Age)VALUES
+('Bat','Man','321Cavern Ave','Gotham',54);
+
+INSERT into below (FirstName,LastName,Address,City,Age)VALUES 
+'Wonder','Women','987Truth way','Paradise',39;
+
+INSERT into below (FirstName,LastName,Address,City,Age)VALUES 
+'Donald','Duck','555Quack Street','Mallard',65);
+
+INSERT into below (FirstName,LastName,Address,City,Age)VALUES 
+('Bugs','Bunny','567Carrot Street','Rascal',58);
+
+INSERT into below (FirstName,LastName,Address,City,Age)VALUES 
+('Wiley','Coyote','999Acme Way','Canyon',61);
+
+INSERT into below (FirstName,LastName,Address,City,Age)VALUES
+('Cat','Women','234Purfet Street','Hairball',32);
+
+INSERT into below (FirstName,LastName,Address,City,Age)VALUES 
+('Tweety','Bird','534','Itotltaw',28);
+
+
+
+3.creat table given below: Employee and incentive
+====================================================
+create:
+CREATE TABLE Employee (Employee_id int(10),First_name varchar(200),Last_name varchar(200), 
+Salary int(10),Joining_date datetime,department varchar(100));
+
+update:
+UPDATE `employee` SET`Joining_date`='01-jan-13 12.00.00 AM'WHERE `employee`.`Employee_id`=1;
+
+insert:
+INSERT INTO employee(Employee_id,First_name,Last_name,Salary,Joining_date,Department)VALUES
+(1,'John','Abraham','1000000','01-jan-13 12.00.00 AM','Banking');
+
+INSERT INTO employee(Employee_id,First_name,Last_name,Salary,Joining_date,Department)VALUES
+(2,'Michael','Clarke',800000,'01-JAN-13 12.00.00 AM','Insurance');
+
+INSERT INTO employee(Employee_id,First_name,Last_name,Salary,Joining_date,Department)VALUES
+(3,'Roy','Thomas',700000,'01-FEB-13 12.00.00 AM','Banking');
+
+INSERT INTO employee(Employee_id,First_name,Last_name,Salary,Joining_date,Department)VALUES
+(4,'Tom','Jose',600000,'01-FEB-13 12.00.00 AM','Insuarnce');
+
+INSERT INTO employee(Employee_id,First_name,Last_name,Salary,Joining_date,Department)VALUES
+(5,'Jerry','Pinto',650000,'01-FEB-13 12.00.00 AM','Insuarnce');
+
+INSERT INTO employee(Employee_id,First_name,Last_name,Salary,Joining_date,Department)VALUES
+(6,'Philip','Mathew',750000,'01-JAN-13 12.00.00 AM','Service');
+
+INSERT INTO employee(Employee_id,First_name,Last_name,Salary,Joining_date,Department)VALUES
+(7,'TestName1','123',650000,'01-JAN-13 12.00.00 AM','Service');
+
+INSERT INTO employee(Employee_id,First_name,Last_name,Salary,Joining_date,Department)VALUES
+(8,'TestName2','Lname%',600000,'01-FEB-13 12.00.00 AM','Insuarnce');
+
+
+Create table given below: Incentive
+===================================
+->Create Table Employee :
+
+
+Inch Column update query use in date formation
+UPDATE `incentive` SET`Incentive_date`='2023-05-12'WHERE `incentive`.`Employee_ref_id`=1;
+
+
+CREATE TABLE  Incentive (Employee_ref_id int(10),Incentave_date date,Incentave_amount int(20));
+
+->Insert Table Incentive :
+
+
+INSERT INTO incentive(Employee_ref_id,Incentave_date,Incentave_amount)VALUES(1,'01-FEB-13',5000);
+
+INSERT INTO incentive(Employee_ref_id,Incentave_date,Incentave_amount)VALUES(2,'01-FEB-13',3000);
+
+INSERT INTO incentive(Employee_ref_id,Incentave_date,Incentave_amount)VALUES(3,'01-FEB-13',4000);
+
+INSERT INTO incentive(Employee_ref_id,Incentave_date,Incentave_amount)VALUES(1,'01-JAN-13',4500);
+
+INSERT INTO incentive(Employee_ref_id,Incentave_date,Incentave_amount)VALUES(2,'01-JAN-13',3500);
+
+
+
+Question Answer
+---------------:->
+
+Q-a) Get First_Name from employee table using Tom name “Employee Name”
+
+Answer :-select First_name `First_name` FROM employee;
+
+
+Q-b) : Get FIRST_NAME, Joining Date, and Salary from employee table.
+
+Answer :-SELECT First_name,Joining_date,Salary FROM `employee`;
+
+
+Q-c) : Get all employee details from the employee table order by First_Name
+ 
+Ascending and Salary descending?
+
+
+Answer :-SELECT * FROM `employee` ORDER BY employee.First_name ASC,employee.Salary DESC;
+note:
+
+SELECT * FROM `employee` ORDER BY employee.First_name ASC;
+
+SELECT * FROM `employee` ORDER BY employee.employee.Salary DESC;
+
+
+Q-d) :- Get employee details from employee table whose first name contains ‘J’.
+
+Answer :- SELECT * FROM `employee` WHERE First_name LIKE '%j%';
+
+
+Q-e) :- Get department wise maximum salary from employee table order by salary ascending?
+
+Answer:-> SELECT * FROM employee ORDER by Salary ASC;
+
+
+Q-f) :- Select first_name, incentive amount from employee and incentives table for
+ 
+       those employees who have incentives and incentive amount greater than 3000 
+
+Answer :->   SELECT FIRST_NAME,Incentave_amount FROM EMPLOYEE  INNER JOIN incentive
+ 
+       ON employee.EMPLOYEE_ID=incentive.EMPLOYEE_REF_ID AND Incentave_amountT >3000;
+
+
+Q-g) :- Create After Insert trigger on Employee table which insert records in view table
+
+ Answer :-> CREATE TABLE employee_audit (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            employeenumber INT NOT NULL,
+            first_name VARCHAR(50) NOT NULL,                                                                 
+            salary int DEFAULT NULL,
+            action VARCHAR(50) DEFAULT NULL);
+
+
+CREATE TRIGGER before_employee_update 
+    BEFORE UPDATE ON employee
+    FOR EACH ROW 
+ INSERT INTO employee_audit
+ SET action = 'update',
+     employeeNumber = OLD.employeeNumber,
+     
+     lastname = OLD.lname,
+     changedat = NOW();
+
+
+
+Q-12) Create table given below: Salesperson and Customer
+================================================
+--->Create table :-
+
+create table salesperson (SNo int(10) PRIMARY key,SNAME varchar(100),CITY varchar(200), COMM int(10)); 
+
+---> INSERT TABLE:-
+
+insert INTO salesperson (SNo,SNAME,CITY,COMM) VALUES(1001,'Peel','London',.12);
+insert INTO salesperson (SNo,SNAME,CITY,COMM) VALUES(1002,'Serres','San Jose',.13);
+insert INTO salesperson (SNo,SNAME,CITY,COMM) VALUES(1004,'Motika','London',.11);
+insert INTO salesperson (SNo,SNAME,CITY,COMM) VALUES(1007,'Rafkin','Barcelona',.15);
+insert INTO salesperson (SNo,SNAME,CITY,COMM) VALUES(1003,'Axelrod','New York',.1);
+
+--->Create table :- Customer
+CREATE TABLE Customer( Cnm int (20),C_name varchar(20),City varchar(20),Rating int(20),SNO int(20)  , PRIMARY KEY (Cnm) ,FOREIGN KEY (SNO) REFERENCES salesperson (SNO));
+
+---> INSERT TABLE:-
+
+INSERT INTO customer(Cnm,C_name,City,Rating,SNO)VALUES(201,'Hoffman','London',100,1001);
+INSERT INTO customer(Cnm,C_name,City,Rating,SNO)VALUES(202,'Giovanne','Roe',200,1003);
+INSERT INTO customer(Cnm,C_name,City,Rating,SNO)VALUES(202,'Giovanne','Roe',200,1003);
+INSERT INTO customer(Cnm,C_name,City,Rating,SNO)VALUES(203,'Liu','San Jose',300,1002);
+INSERT INTO customer(Cnm,C_name,City,Rating,SNO)VALUES(204,'Grass','Barcelona',100,1002);
+INSERT INTO customer(Cnm,C_name,City,Rating,SNO)VALUES(206,'Clemens','London',300,1007);
+INSERT INTO customer(Cnm,C_name,City,Rating,SNO)VALUES(207,'Pereira','Roe',100,1004);
+
+
+
+
+
+
+
+Q-13) All orders for more than $1000. 
+
+Answer:-Select * from salesperson where SNO > 1000;
+
+
+Q-14) Names and cities of all salespeople in London with commission above 0.12                            
+
+Answer:-SELECT SNAME, CITY , COMM FROM salesperson WHERE COMM > 0.12 AND CITY = 'London';
+
+
+Q-15) All salespeople either in Barcelona or in London
+
+Answer:-Select SNAME, CITY from salesperson where CITY in ('Barcelona','London');
+
+
+
+Q-16) All salespeople with commission between 0.10 and 0.12. (Boundary values should be excluded). 
+
+Answer:-SELECT SNAME , COMM FROM salesperson WHERE COMM > 0.10 AND COMM < 0.12;
+
+
+
+Q-17) All customers excluding those with rating <= 100 unless they are located in Rome 
+
+Answer:-SELECT C_name FROM customer WHERE Rating <= 100 OR City = 'Rome';
+
+
+
+Q-18) Write a SQL statement that displays all the information about all
+     salespeople
+
+  Answer:- SELECT * FROM salesman;
+
+
+Q-19)  From the following table, write a SQL query to find orders that are 
+       delivered by a salesperson with ID. 5001. Return ord_no, ord_date, 
+       purch_amt. 
+
+
+ Answer:- SELECT ord_no, ord_date, purch_amt
+      FROM orders
+      WHERE salesman_id=5001;
+
+
+
+Q-20) From the following table, write a SQL query to select a range of 
+     products whose price is in the range Rs.200 to Rs.600. Begin and end 
+     values are included. Return pro_id, pro_name, pro_price, and pro_com.
+
+Answer:- SELECT * FROM item_mast
+     WHERE pro_price BETWEEN 200 AND 600;
+
+
+
+Q-21) From the following table, write a SQL query to calculate the average 
+     price for a manufacturer code of 16. Return avg. 
+
+ Answer:- SELECT AVG(pro_price) FROM item_mast 
+    WHERE pro_com=16;
+
+
+
+
+Q-22) From the following table, write a SQL query to display the pro_name 
+     as 'Item Name' and pro_priceas 'Price in Rs.' 
+
+
+ Answer:- SELECT pro_name as "Item Name", pro_price AS "Price in Rs."
+    FROM item_mast;
+
+
+
+Q-23) From the following table, write a SQL query to find the items whose 
+      prices are higher than or equal to $250. Order the result by product price in 
+      descending, then product name in ascending. Return pro_name and 
+      pro_price.
+
+
+Answer:-  SELECT pro_name, pro_price 
+    FROM item_mast
+    WHERE pro_price >= 250
+    ORDER BY pro_price DESC, pro_name;
+
+
+
+Q-24) From the following table, write a SQL query to calculate average 
+      price of the items for each company. Return average price and company code.
+
+Answer:-SELECT AVG(pro_price), pro_com
+     FROM item_mast
+    GROUP BY pro_com;
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
